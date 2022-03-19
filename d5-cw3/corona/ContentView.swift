@@ -13,6 +13,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        var people = [
+            Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2),
+            Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2),
+            Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2),
+            Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2)
+        ]
         ZStack{
             Color.gray
                 .opacity(0.3)
@@ -25,14 +31,15 @@ struct ContentView: View {
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .padding()
                 // name of new cases
-                VStack{
-        // الحالة الأولى
-                // الاسم
-               Text("")
-// المنطقة
-                Text("")
+                List(people, id: \.id) { i in
+                    VStack{
+                        Text("\(i.fullname)")
+                        
+                        Text("\(i.area)")
+                        
+                        Text("\(i.numberofdoses)")
                     // عدد الجرعات
-               Text("")
+               
 
                 Divider()
                 }
@@ -71,7 +78,7 @@ struct ContentView: View {
         }
     }
 }
-
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
