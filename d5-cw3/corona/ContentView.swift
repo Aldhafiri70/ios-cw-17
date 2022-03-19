@@ -19,7 +19,8 @@ struct ContentView: View {
             Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2),
             Covidinfo(fullname: "Rezo al dhfiri", area: "القيروان",numberofdoses: 2)
         ]
-        ZStack{
+        
+    ZStack{
             Color.gray
                 .opacity(0.3)
                 .ignoresSafeArea()
@@ -38,12 +39,13 @@ struct ContentView: View {
                         Text("\(i.area)")
                         
                         Text("\(i.numberofdoses)")
-                    // عدد الجرعات
+                    }}
+                  // عدد الجرعات
                
 
                 Divider()
-                }
-                VStack{
+            
+                    VStack{
         // الحالة الثانية
                 // الاسم
                Text("")
@@ -51,9 +53,9 @@ struct ContentView: View {
                Text("")
     // عدد الجرعات
                Text("")
-
+                    }
                 Divider()
-                }
+                
                 VStack{
               // الحالة الثالثة
                       // الاسم
@@ -74,7 +76,7 @@ struct ContentView: View {
                 .padding()
                 .border(Color.white, width: 5)
                 .cornerRadius(10)
-            }
+                
         }
     }
 }
